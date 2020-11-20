@@ -1,5 +1,12 @@
-import React from "react"
+import React from 'react'
+import {Link} from 'gatsby'
 
-export default function Home() {
-  return <div>Hello world!</div>
+export default function Index() {
+  return (
+    <div>
+      hello <br />
+      <Link to='/blog'>blog</Link>
+    </div>
+  )
 }
+
