@@ -1,4 +1,6 @@
 import React from 'react'
+import Layout from '../components/layout'
+import {Link} from 'gatsby'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
 
@@ -25,11 +27,12 @@ const options = {
 
 export default function Blog({data}) {
     return (
-        <div>
+        <Layout>
             <div>---- header ---</div>
             <h1>{data.contentfulBlogPost.title}</h1>
             <p>{data.contentfulBlogPost.publishedDate}</p>
             {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
-        </div>
+            <Link to='/'>Inicio</Link>
+        </Layout>
     )
 }
