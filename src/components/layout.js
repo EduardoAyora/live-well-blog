@@ -6,10 +6,12 @@ import layoutStyles from './layout.module.scss'
 export default function Layout({children}) {
     return (
         <div className={layoutStyles.container}>
-            <Header className={layoutStyles.header} />
-            <div className={layoutStyles.body}>
-                {children}
-                <Footer className={layoutStyles.footer} />
+            <Header />
+            <div className={layoutStyles.content}>
+                <div className={layoutStyles.main}>
+                    {children}
+                </div>
+                <Footer />
             </div>
         </div>
     )
