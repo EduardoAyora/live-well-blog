@@ -4,12 +4,31 @@
 }
 
 .inside {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.burger-menu {
-    position: absolute;
-    right: 0;
-    top: 1rem;
-    color: white;
+.instagram-icon {
+    margin-left: auto;
+    width: 40px;
+    margin-bottom: -15px;
+    fill: white;
+}
+
+@media only screen and (min-width: 801px) {
+    .container {
+        width: 30vw;
+        position: fixed;
+        height: 100vh;
+        display: flex;
+    }
+    .inside {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .instagram-icon {
+        margin-top: 2rem;
+    }
 }

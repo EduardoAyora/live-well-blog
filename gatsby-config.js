@@ -12,8 +12,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
+        name: 'static',
+        path: `${__dirname}/static`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/static/icons/`
+        }
       }
     },
     {

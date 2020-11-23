@@ -3,3 +3,32 @@
     border-bottom: 1px dashed #c7c7c7;
     padding-bottom: 0.8rem;
 }
+
+.post a {
+    color: black;
+}
+
+.post-title {
+    font-size: 1.6rem;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #a1a1a1;
+}
+
+.read-more a {
+    border-bottom: 2px solid #ffd300;
+    padding: 0.3em 24px 0.3em 0;
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #212121;
+}
+
+.read-more a svg {
+    position: absolute;
+    right: 0;
+    margin-right: 2px;
+    top: .5rem;
+}
