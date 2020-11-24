@@ -29,7 +29,7 @@ export default function Index() {
 
     const posts = data.allContentfulBlogPost.edges.map(edge => {
         let thumbnail
-        if (edge.node.thumbnail) thumbnail = <img src={edge.node.thumbnail.file.url} style={{maxWidth:'100%'}} />
+        if (edge.node.thumbnail) thumbnail = <Link to={`/blog/${edge.node.slug}`}><img src={edge.node.thumbnail.file.url} style={{maxWidth:'100%'}} /></Link>
         return (
             <article className={indexStyles.post} key={edge.node.slug}>
                 <h2 className={indexStyles.postTitle}>
