@@ -2,10 +2,11 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: 'blog',
+    title: 'Live Well',
     author: 'autor'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

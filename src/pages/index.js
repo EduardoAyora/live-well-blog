@@ -4,6 +4,7 @@ import {Link, graphql, useStaticQuery} from 'gatsby'
 import indexStyles from './index.module.scss'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
+import Head from '../components/head'
 import '../styles/index.scss'
 
 export default function Index() {
@@ -50,6 +51,7 @@ export default function Index() {
 
     return (
         <Layout>
+            <Head title={'Inicio'} />
             <main>
                 {posts}
             </main>
