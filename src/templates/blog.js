@@ -20,7 +20,7 @@ const options = {
     renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: node => {
             const fields = node.data.target.fields
-            return <img alt={fields.title['en-US']} src={fields.file['en-US'].url} />
+            return <img alt={fields.title['en-US']} src={fields.file['en-US'].url} style={{maxWidth:'100%'}} />
         }
     }
 }

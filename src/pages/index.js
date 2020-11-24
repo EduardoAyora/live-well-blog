@@ -15,28 +15,38 @@ export default function Index() {
                         title
                         slug
                         publishedDate(formatString: "DD-MM-YYYY")
+                        thumbnail {
+                            file {
+                                url
+                            }
+                        }
                     }
                 }
             }
         }
     `)
 
-    const posts = data.allContentfulBlogPost.edges.map(edge => (
-        <article className={indexStyles.post} key={edge.node.slug}>
-            <h2 className={indexStyles.postTitle}>
-                <Link to={`/blog/${edge.node.slug}`}>{edge.node.title}</Link>
-            </h2>
-            <p className={indexStyles.postMeta}>
-                Publicado el {edge.node.publishedDate}
-            </p>
-            <p className={indexStyles.readMore}>
-                <Link to={`/blog/${edge.node.slug}`}>
-                    Seguir leyendo
-                    <FontAwesomeIcon icon={faLongArrowAltRight} />
-                </Link>
-            </p>
-        </article>
-    ))
+    const posts = data.allContentfulBlogPost.edges.map(edge => {
+        let thumbnail
+        if (edge.node.thumbnail) thumbnail = <img src={edge.node.thumbnail.file.url} style={{maxWidth:'100%'}} />
+        return (
+            <article className={indexStyles.post} key={edge.node.slug}>
+                <h2 className={indexStyles.postTitle}>
+                    <Link to={`/blog/${edge.node.slug}`}>{edge.node.title}</Link>
+                </h2>
+                <p className={indexStyles.postMeta}>
+                    Publicado el {edge.node.publishedDate}
+                </p>
+                {thumbnail}
+                <p className={indexStyles.readMore}>
+                    <Link to={`/blog/${edge.node.slug}`}>
+                        Seguir leyendo
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Link>
+                </p>
+            </article>
+        )
+    })
 
     return (
         <Layout>
